@@ -50,45 +50,46 @@ public class DangNhapGUI extends JFrame {
         Container con = getContentPane();
 
         pnMain = new ImagePanel("image/LoginUI/background-login.png");
-        pnMain.setLayout(null);
+        pnMain.setBounds(0, 0,445,482);
 
         btnExit = new JLabel(new ImageIcon("image/LoginUI/btn-close.png"));
         btnExit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnExit.setBounds(399, 118, 40, 40);
+        btnExit.setBounds(399, 40, 40, 40);
 
         btnLogin = new JLabel(new ImageIcon("image/LoginUI/btn-login.png"));
         btnLogin.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnLogin.setBounds(24, 513, 392, 55);
+        btnLogin.setBounds(24, 380, 392, 55);
 
         btnForgot = new JLabel(new ImageIcon("image/LoginUI/btn-forgot.png"));
         btnForgot.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        btnForgot.setBounds(138, 575, 164, 30);
+        btnForgot.setBounds(160, 430, 130, 30);
 
-        Font fontTXT = new Font("", Font.BOLD, 18);
+        Font fontTXT = new Font("", Font.BOLD, 15);
         txtUser = new JTextField();
         txtUser.setBackground(new Color(0, 0, 0, 0f));
         txtUser.setBorder(BorderFactory.createEmptyBorder());
-        txtUser.setForeground(Color.WHITE);
+        txtUser.setForeground(Color.BLACK);
         txtUser.setFont(fontTXT);
         txtUser.setHorizontalAlignment(JTextField.LEFT);
-        txtUser.setBounds(36, 302, 370, 50);
+        txtUser.setBounds(80, 188, 370, 50);
 
         txtPassword = new JPasswordField();
         txtPassword.setEchoChar('•');
         txtPassword.setBackground(new Color(0, 0, 0, 0f));
         txtPassword.setBorder(BorderFactory.createEmptyBorder());
-        txtPassword.setForeground(Color.WHITE);
+        txtPassword.setForeground(Color.BLACK);
         txtPassword.setFont(fontTXT);
         txtPassword.setHorizontalAlignment(JTextField.LEFT);
-        txtPassword.setBounds(36, 401, 370, 50);
+        txtPassword.setBounds(80, 280, 370, 50);
 
         Main.changLNF("Windows");
         ckbRemember = new JCheckBox("Ghi nhớ đăng nhập");
         ckbRemember.setFont(fontTXT);
         ckbRemember.setOpaque(false);
-        ckbRemember.setForeground(Color.white);
-        ckbRemember.setBounds(28, 464, 290, 19);
+        ckbRemember.setForeground(Color.black);
+        ckbRemember.setBounds(70, 330, 290, 20);
         ckbRemember.setFocusPainted(false);
+        
         Main.changLNF("Nimbus");
 
         pnMain.add(btnExit);
