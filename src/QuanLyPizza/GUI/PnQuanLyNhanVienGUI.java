@@ -26,6 +26,7 @@ import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
 public class PnQuanLyNhanVienGUI extends JPanel {
@@ -98,6 +99,8 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         =========================================================================
          */
         JPanel pnNhanVien = new TransparentPanel();
+        JPanel pnEditTextNhanVien = new TransparentPanel();
+        pnEditTextNhanVien.setLayout(new BoxLayout(pnEditTextNhanVien, BoxLayout.X_AXIS));
         pnNhanVien.setLayout(new BoxLayout(pnNhanVien, BoxLayout.Y_AXIS));
 
         JPanel pnTopNV = new TransparentPanel();
@@ -179,6 +182,7 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         lblChucVu.setPreferredSize(lblSize);
         cmbGioiTinh.setPreferredSize(txtChucVu.getPreferredSize());
 
+        pnText.setBorder(new EmptyBorder(30, 0, 0, 10));
         pnTopNV.add(pnText);
 
         //==========
@@ -193,14 +197,18 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         lblTim.setPreferredSize(lblSize);
         //==========
         JPanel pnButton = new TransparentPanel();
-
+        pnButton.setLayout(new BoxLayout(pnButton, BoxLayout.Y_AXIS));
+        
         btnThemNV = new JButton("Thêm");
         btnSuaNV = new JButton("Lưu");
         btnXoaNV = new JButton("Xoá");
         btnTimNV = new JButton("Tìm kiếm");
         btnXuatExcel = new JButton("Xuất");
         btnNhapExcel = new JButton("Nhập");
-
+        btnCapTaiKhoan = new JButton("Cấp tài khoản");
+        btnResetMatKhau = new JButton("Mật khẩu/Quyền");
+        btnXoaTaiKhoan = new JButton("Khoá tài khoản");
+        
         Font fontButton = new Font("Tahoma", Font.PLAIN, 16);
         btnThemNV.setFont(fontButton);
         btnSuaNV.setFont(fontButton);
@@ -208,46 +216,54 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         btnTimNV.setFont(fontButton);
         btnXuatExcel.setFont(fontButton);
         btnNhapExcel.setFont(fontButton);
-
+        btnCapTaiKhoan.setFont(fontButton);
+        btnResetMatKhau.setFont(fontButton);
+        btnXoaTaiKhoan.setFont(fontButton);
+        
         btnThemNV.setIcon(new ImageIcon("image/add-icon.png"));
         btnSuaNV.setIcon(new ImageIcon("image/Pencil-icon.png"));
         btnXoaNV.setIcon(new ImageIcon("image/delete-icon.png"));
         btnTimNV.setIcon(new ImageIcon("image/Search-icon.png"));
         btnXuatExcel.setIcon(new ImageIcon("image/excel-icon.png"));
         btnNhapExcel.setIcon(new ImageIcon("image/excel-icon.png"));
-
-        pnButton.add(btnThemNV);
-        pnButton.add(btnSuaNV);
-        pnButton.add(btnXoaNV);
-        pnButton.add(btnTimNV);
-        pnButton.add(btnXuatExcel);
-        pnButton.add(btnNhapExcel);
-
-        Dimension btnSize = btnTimNV.getPreferredSize();
-        btnThemNV.setPreferredSize(btnSize);
-        btnSuaNV.setPreferredSize(btnSize);
-        btnXoaNV.setPreferredSize(btnSize);
-        btnTimNV.setPreferredSize(btnSize);
-        btnXuatExcel.setPreferredSize(btnSize);
-        btnNhapExcel.setPreferredSize(btnSize);
-
-        JPanel pnButton2 = new TransparentPanel();
-        btnCapTaiKhoan = new JButton("Cấp tài khoản");
-        btnResetMatKhau = new JButton("Mật khẩu/Quyền");
-        btnXoaTaiKhoan = new JButton("Khoá tài khoản");
         btnCapTaiKhoan.setIcon(new ImageIcon("image/icons8_man_with_key_32px.png"));
         btnResetMatKhau.setIcon(new ImageIcon("image/icons8_password_reset_32px.png"));
         btnXoaTaiKhoan.setIcon(new ImageIcon("image/icons8_denied_32px.png"));
-        btnCapTaiKhoan.setFont(fontButton);
-        btnResetMatKhau.setFont(fontButton);
-        btnXoaTaiKhoan.setFont(fontButton);
-        pnButton2.add(btnCapTaiKhoan);
-        pnButton2.add(btnResetMatKhau);
-        pnButton2.add(btnXoaTaiKhoan);
+        
+        Dimension btnSize = new Dimension(190, btnXoaTaiKhoan.getPreferredSize().height);
+        updateSize(btnSize, btnThemNV);
+        updateSize(btnSize, btnSuaNV);
+        updateSize(btnSize, btnXoaNV);
+        updateSize(btnSize, btnTimNV);
+        updateSize(btnSize, btnXuatExcel);
+        updateSize(btnSize, btnNhapExcel);
+        updateSize(btnSize, btnCapTaiKhoan);
+        updateSize(btnSize, btnResetMatKhau);
+        updateSize(btnSize, btnXoaTaiKhoan);
+        
+        pnButton.add(btnThemNV);
+        pnButton.add(btnSuaNV);
+        pnButton.add(btnXoaNV);
+        pnButton.add(btnXuatExcel);
+        pnButton.add(btnNhapExcel);
+        
+        pnButton.add(btnCapTaiKhoan);
+        pnButton.add(btnResetMatKhau);
+        pnButton.add(btnXoaTaiKhoan);
+        
+        pnTimNV.add(btnTimNV);
+        
+        pnTopNV.setBorder(new EmptyBorder(30, 0, 0, 30));
+        pnButton.setBorder(new EmptyBorder(30, 0, 0, 30));        
+        pnEditTextNhanVien.setBorder(new EmptyBorder(0, 10, 10, 0));
 
-        pnNhanVien.add(pnTopNV);
-        pnNhanVien.add(pnButton);
-        pnNhanVien.add(pnButton2);
+        pnEditTextNhanVien.add(pnTopNV);
+        pnEditTextNhanVien.add(pnButton);
+        
+        pnNhanVien.add(pnEditTextNhanVien);
+//        pnNhanVien.add(pnTopNV);
+//        pnNhanVien.add(pnButton);
+//        pnNhanVien.add(pnButton2);
         //===================TABLE NHÂN VIÊN=====================
         JPanel pnTableNhanVien = new TransparentPanel();
         pnTableNhanVien.setLayout(new BorderLayout());
@@ -268,12 +284,15 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         =========================================================================
          */
         JPanel pnPhanQuyen = new TransparentPanel();
-        pnPhanQuyen.setLayout(new BoxLayout(pnPhanQuyen, BoxLayout.Y_AXIS));
+        JPanel pnContentPhanQuyen = new TransparentPanel();
+        JPanel pnLayoutPhanQuyen = new TransparentPanel();
+        pnContentPhanQuyen.setLayout(new BoxLayout(pnContentPhanQuyen, BoxLayout.Y_AXIS));
+        pnLayoutPhanQuyen.setLayout(new BoxLayout(pnLayoutPhanQuyen, BoxLayout.Y_AXIS));
 
         JPanel pnTitlePhanQuyen = new TransparentPanel();
         JLabel lblTitlePhanQuyen = new JLabel("<html><h1>Quản lý phân quyền</h1></html>");
         pnTitlePhanQuyen.add(lblTitlePhanQuyen);
-        pnPhanQuyen.add(pnTitlePhanQuyen);
+        pnContentPhanQuyen.add(pnTitlePhanQuyen);
 
         JPanel pnCmbQuyen = new TransparentPanel();
         JLabel lblCmbQuyen = new JLabel("<html><b>Nhóm quyền:</b></html>");
@@ -282,37 +301,37 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         cmbQuyen.setFont(font);
         pnCmbQuyen.add(lblCmbQuyen);
         pnCmbQuyen.add(cmbQuyen);
-        pnPhanQuyen.add(pnCmbQuyen);
+        pnContentPhanQuyen.add(pnCmbQuyen);
 
         JPanel pnCheckNhapHang = new TransparentPanel();
         ckbNhapHang = new JCheckBox("Quản lý nhập hàng.");
         ckbNhapHang.setFont(font);
         pnCheckNhapHang.add(ckbNhapHang);
-        pnPhanQuyen.add(pnCheckNhapHang);
+        pnContentPhanQuyen.add(pnCheckNhapHang);
 
         JPanel pnCheckQLSanPham = new TransparentPanel();
         ckbQLSanPham = new JCheckBox("Quản lý sản phẩm.");
         ckbQLSanPham.setFont(font);
         pnCheckQLSanPham.add(ckbQLSanPham);
-        pnPhanQuyen.add(pnCheckQLSanPham);
+        pnContentPhanQuyen.add(pnCheckQLSanPham);
 
         JPanel pnCheckQLNhanVien = new TransparentPanel();
         ckbQLNhanVien = new JCheckBox("Quản lý nhân viên.");
         ckbQLNhanVien.setFont(font);
         pnCheckQLNhanVien.add(ckbQLNhanVien);
-        pnPhanQuyen.add(pnCheckQLNhanVien);
+        pnContentPhanQuyen.add(pnCheckQLNhanVien);
 
         JPanel pnCheckQLKhachHang = new TransparentPanel();
         ckbQLKhachHang = new JCheckBox("Quản lý khách hàng.");
         ckbQLKhachHang.setFont(font);
         pnCheckQLKhachHang.add(ckbQLKhachHang);
-        pnPhanQuyen.add(pnCheckQLKhachHang);
+        pnContentPhanQuyen.add(pnCheckQLKhachHang);
 
         JPanel pnCheckQLThongKe = new TransparentPanel();
         ckbThongKe = new JCheckBox("Quản lý thống kê.");
         ckbThongKe.setFont(font);
         pnCheckQLThongKe.add(ckbThongKe);
-        pnPhanQuyen.add(pnCheckQLThongKe);
+        pnContentPhanQuyen.add(pnCheckQLThongKe);
 
         Dimension ckbSize = ckbQLKhachHang.getPreferredSize();
         cmbQuyen.setPreferredSize(ckbSize);
@@ -323,6 +342,8 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         ckbThongKe.setPreferredSize(ckbSize);
 
         JPanel pnButtonQuyen = new TransparentPanel();
+        pnButtonQuyen.setLayout(new BoxLayout(pnButtonQuyen, BoxLayout.Y_AXIS));
+        pnButtonQuyen.setBorder(new EmptyBorder(0, 50, 0, 0));
         btnThemQuyen = new JButton("Thêm quyền");
         btnSuaQuyen = new JButton("Sửa quyền");
         btnXoaQuyen = new JButton("Xoá quyền");
@@ -337,15 +358,20 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         pnButtonQuyen.add(btnXoaQuyen);
         btnSuaQuyen.setPreferredSize(btnThemQuyen.getPreferredSize());
         btnXoaQuyen.setPreferredSize(btnThemQuyen.getPreferredSize());
+        
+        pnPhanQuyen.add(pnContentPhanQuyen);
         pnPhanQuyen.add(pnButtonQuyen);
 
         JPanel pnImage = new ImagePanel("image/backgroundManagerment.jpg");
         pnImage.setPreferredSize(new Dimension(w, 450));
-        pnPhanQuyen.add(pnImage);
+        
+        pnLayoutPhanQuyen.add(pnPhanQuyen);
+        pnLayoutPhanQuyen.add(pnImage);
+        
         //========================
         pnCardTabNhanVien = new JPanel(cardNhanVienGroup);
         pnCardTabNhanVien.add(pnNhanVien, "1");
-        pnCardTabNhanVien.add(pnPhanQuyen, "2");
+        pnCardTabNhanVien.add(pnLayoutPhanQuyen, "2");
         this.add(pnCardTabNhanVien);
 
         loadDataTblNhanVien();
@@ -780,6 +806,12 @@ public class PnQuanLyNhanVienGUI extends JPanel {
             }
             dtmNhanVien.addRow(vec);
         }
+    }
+    
+    private void updateSize(Dimension d, JButton button) {
+        button.setPreferredSize(d);
+        button.setMaximumSize(d);
+        button.setMinimumSize(d);
     }
 
     TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();

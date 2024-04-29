@@ -35,13 +35,12 @@ public class DlgThemNhaCungCap extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Thêm mới Nhà cung cấp");
+        jLabel1.setText("Thêm nhà cung cấp");
         jPanel1.add(jLabel1);
 
         txtTenNCC.setColumns(15);
         txtTenNCC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtTenNCC.setBorder(javax.swing.BorderFactory.createTitledBorder("Tên NCC"));
-        txtTenNCC.setOpaque(false);
         txtTenNCC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTenNCCActionPerformed(evt);
@@ -51,7 +50,6 @@ public class DlgThemNhaCungCap extends javax.swing.JDialog {
         txtDiaChi.setColumns(15);
         txtDiaChi.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDiaChi.setBorder(javax.swing.BorderFactory.createTitledBorder("Địa chỉ"));
-        txtDiaChi.setOpaque(false);
         txtDiaChi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDiaChiActionPerformed(evt);
@@ -61,13 +59,13 @@ public class DlgThemNhaCungCap extends javax.swing.JDialog {
         txtDienThoai.setColumns(15);
         txtDienThoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtDienThoai.setBorder(javax.swing.BorderFactory.createTitledBorder("Điện thoại"));
-        txtDienThoai.setOpaque(false);
         txtDienThoai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDienThoaiActionPerformed(evt);
             }
         });
 
+        btnThem.setBackground(new java.awt.Color(116, 209, 234));
         btnThem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnThem.setText("Thêm");
         btnThem.setPreferredSize(new java.awt.Dimension(77, 40));
@@ -78,6 +76,7 @@ public class DlgThemNhaCungCap extends javax.swing.JDialog {
         });
         jPanel3.add(btnThem);
 
+        btnHuy.setBackground(new java.awt.Color(255, 102, 102));
         btnHuy.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnHuy.setText("Huỷ");
         btnHuy.setPreferredSize(new java.awt.Dimension(77, 40));
