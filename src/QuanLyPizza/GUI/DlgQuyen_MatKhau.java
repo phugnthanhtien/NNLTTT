@@ -84,15 +84,21 @@ public class DlgQuyen_MatKhau extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        pnTab.setBackground(new java.awt.Color(255, 255, 255));
         pnTab.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         pnCapMatKhau.setLayout(new javax.swing.BoxLayout(pnCapMatKhau, javax.swing.BoxLayout.Y_AXIS));
 
+        pnTitleMatKhau.setBackground(new java.awt.Color(116, 209, 234));
+
         lblTitleMatKhau.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblTitleMatKhau.setText("Cấp lại mật khẩu");
+        lblTitleMatKhau.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitleMatKhau.setText("Thay đổi mật khẩu");
         pnTitleMatKhau.add(lblTitleMatKhau);
 
         pnCapMatKhau.add(pnTitleMatKhau);
+
+        pnMatKhauInfo.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Mã Nhân viên");
@@ -106,8 +112,11 @@ public class DlgQuyen_MatKhau extends javax.swing.JDialog {
         txtMatKhau_TenDangNhap.setEditable(false);
         txtMatKhau_TenDangNhap.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
+        pnMatKhauButton.setBackground(new java.awt.Color(255, 255, 255));
+
         btnCapMatKhau.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnCapMatKhau.setText("Đặt lại mật khẩu");
+        btnCapMatKhau.setForeground(new java.awt.Color(0, 255, 255));
+        btnCapMatKhau.setText("Thay đổi mật khẩu");
         btnCapMatKhau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCapMatKhauActionPerformed(evt);
@@ -155,11 +164,16 @@ public class DlgQuyen_MatKhau extends javax.swing.JDialog {
 
         pnCapMatKhau2.setLayout(new javax.swing.BoxLayout(pnCapMatKhau2, javax.swing.BoxLayout.Y_AXIS));
 
+        pnTitleMatKhau2.setBackground(new java.awt.Color(116, 209, 234));
+
         lblTitleMatKhau2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        lblTitleMatKhau2.setText("Chỉnh sửa quyền");
+        lblTitleMatKhau2.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitleMatKhau2.setText("Chỉnh sửa quyền tài khoản");
         pnTitleMatKhau2.add(lblTitleMatKhau2);
 
         pnCapMatKhau2.add(pnTitleMatKhau2);
+
+        pnMatKhauInfo2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Mã Nhân viên");
@@ -170,7 +184,10 @@ public class DlgQuyen_MatKhau extends javax.swing.JDialog {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Quyền Tài Khoản");
 
+        pnMatKhauButton2.setBackground(new java.awt.Color(255, 255, 255));
+
         btnLuuQuyen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnLuuQuyen.setForeground(new java.awt.Color(0, 255, 255));
         btnLuuQuyen.setText("Lưu thay đổi");
         btnLuuQuyen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,7 +240,7 @@ public class DlgQuyen_MatKhau extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnTab)
+            .addComponent(pnTab, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
