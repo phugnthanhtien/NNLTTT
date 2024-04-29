@@ -36,10 +36,10 @@ public class PnQuanLyBanHangGUI extends JPanel {
     private LoaiBUS loaiBUS = new LoaiBUS();
     private HoaDonBUS hoaDonBUS = new HoaDonBUS();
 
-    JLabel lblTabbedBanHang, lblTabbedHoaDon;
+    JLabel lblTabbedBanHang, lblTabbedHoaDon,lblTabbedGioHang;
     final ImageIcon tabbedSelected = new ImageIcon("image/ManagerUI/tabbed-btn--selected.png");
     final ImageIcon tabbedDefault = new ImageIcon("image/ManagerUI/tabbed-btn.png");
-    final Color colorPanel = new Color(247, 247, 247);
+    final Color colorPanel = new Color(116,209,234);
     CardLayout cardBanHangGroup = new CardLayout();
     JPanel pnCardTabBanHang;
     MyTable tblBanHang, tblGioHang;
@@ -101,9 +101,19 @@ public class PnQuanLyBanHangGUI extends JPanel {
         lblTabbedHoaDon.setFont(font);
         lblTabbedHoaDon.setForeground(Color.white);
         lblTabbedHoaDon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        
+         lblTabbedGioHang = new JLabel("Giỏ hàng");
+        lblTabbedGioHang.setHorizontalTextPosition(JLabel.CENTER);
+        lblTabbedGioHang.setVerticalTextPosition(JLabel.CENTER);
+        lblTabbedGioHang.setIcon(tabbedDefault);
+        lblTabbedGioHang.setBounds(284, 2, 140, 37);
+        lblTabbedGioHang.setFont(font);
+        lblTabbedGioHang.setForeground(Color.white);
+        lblTabbedGioHang.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         pnTop.add(lblTabbedBanHang);
         pnTop.add(lblTabbedHoaDon);
+        pnTop.add(lblTabbedGioHang);
         //</editor-fold>
         this.add(pnTop, BorderLayout.NORTH);
         /*
@@ -190,7 +200,6 @@ public class PnQuanLyBanHangGUI extends JPanel {
         JPanel pnThongTinBanHang = new TransparentPanel();
         //<editor-fold defaultstate="collapsed" desc="Thông tin bán hàng (textfield, button thêm)">
         pnThongTinBanHang.setLayout(new BoxLayout(pnThongTinBanHang, BoxLayout.Y_AXIS));
-
         JPanel pnTitleThongTin = new TransparentPanel();
         JLabel lblTitleThongTin = new JLabel("Chi tiết sản phẩm", JLabel.LEFT);
         lblTitleThongTin.setFont(new Font("Arial", Font.BOLD, 28));
@@ -283,11 +292,10 @@ public class PnQuanLyBanHangGUI extends JPanel {
 
         //<editor-fold defaultstate="collapsed" desc="Ảnh hàng">
         JPanel pnAnhSanPham = new TransparentPanel();
-        pnAnhSanPham.setPreferredSize(new Dimension((int) pnThongTinBanHang.getPreferredSize().getWidth(), 220));
         lblAnhSP = new JLabel();
         lblAnhSP.setBorder(BorderFactory.createLineBorder(Color.gray));
         lblAnhSP.setPreferredSize(new Dimension(200, 200));
-        pnAnhSanPham.add(lblAnhSP);
+        pnAnhSanPham.add(lblAnhSP,BorderLayout.CENTER);
 
         JPanel pnButtonBanHang = new TransparentPanel();
         btnXoaSPGioHang = new JLabel("Xoá");
@@ -343,21 +351,18 @@ public class PnQuanLyBanHangGUI extends JPanel {
 
         JPanel pnLeftBanHang = new TransparentPanel();
         pnLeftBanHang.setLayout(new BoxLayout(pnLeftBanHang, BoxLayout.Y_AXIS));
-        pnLeftBanHang.setPreferredSize(new Dimension(618, h - 41));
-        pnTableBanHang.setPreferredSize(new Dimension(618, (h - 41) / 2));
+        pnLeftBanHang.setPreferredSize(new Dimension(1030,300));
+        pnTableBanHang.setPreferredSize(new Dimension(1030, 300));
         pnLeftBanHang.add(pnTableBanHang);
-        pnLeftBanHang.add(pnTableGioHang);
+//        pnLeftBanHang.add(pnTableGioHang);
         pnCenter.add(pnLeftBanHang);
 
         JPanel pnRightBanHang = new TransparentPanel();
-        pnRightBanHang.setLayout(new BoxLayout(pnRightBanHang, BoxLayout.Y_AXIS));
-
+        pnRightBanHang.setLayout(new BoxLayout(pnRightBanHang, BoxLayout.X_AXIS));
+        pnRightBanHang.setPreferredSize(new Dimension(1030,400));
         pnRightBanHang.add(pnThongTinBanHang);
-        pnThongTinBanHang.setPreferredSize(new Dimension((int) pnRightBanHang.getPreferredSize().getWidth(),
-                (int) pnTableBanHang.getPreferredSize().getHeight()));
-
         pnRightBanHang.add(pnAnhSanPham);
-        pnRightBanHang.add(pnButtonBanHang);
+//        pnRightBanHang.add(pnButtonBanHang);
         pnCenter.add(pnRightBanHang);
 
         pnCardTabBanHang = new JPanel(cardBanHangGroup);
@@ -376,8 +381,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
         pnCTHoaDon.setLayout(new BorderLayout());
 
         JPanel pnCTHoaDonLeft = new TransparentPanel();
-        pnCTHoaDonLeft.setPreferredSize(new Dimension(420,
-                (int) pnCardTabBanHang.getPreferredSize().getHeight()));
+        pnCTHoaDonLeft.setPreferredSize(new Dimension(1030,844));
         pnCTHoaDonLeft.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 1, Color.DARK_GRAY));
         pnCTHoaDonLeft.setLayout(new BoxLayout(pnCTHoaDonLeft, BoxLayout.Y_AXIS));
         pnCTHoaDon.add(pnCTHoaDonLeft, BorderLayout.WEST);
@@ -461,22 +465,22 @@ public class PnQuanLyBanHangGUI extends JPanel {
         lblMaxSearch.setFont(font);
         txtMinSearch.setFont(font);
         txtMaxSearch.setFont(font);
-        pnSearchPrice.add(lblMinsearch);
-        pnSearchPrice.add(txtMinSearch);
-        pnSearchPrice.add(lblMaxSearch);
-        pnSearchPrice.add(txtMaxSearch);
-        pnCTHoaDonLeft.add(pnSearchPrice);
+//        pnSearchPrice.add(lblMinsearch);
+//        pnSearchPrice.add(txtMinSearch);
+//        pnSearchPrice.add(lblMaxSearch);
+//        pnSearchPrice.add(txtMaxSearch);
+//        pnCTHoaDonLeft.add(pnSearchPrice);
 
         JPanel pnSearchDate = new TransparentPanel(new FlowLayout());
         lblMinNgay.setFont(font);
         lblMaxNgay.setFont(font);
         txtMinNgayLap.setFont(font);
         txtMaxNgayLap.setFont(font);
-        pnSearchDate.add(lblMinNgay);
-        pnSearchDate.add(txtMinNgayLap);
-        pnSearchDate.add(lblMaxNgay);
-        pnSearchDate.add(txtMaxNgayLap);
-        pnCTHoaDonLeft.add(pnSearchDate);
+//        pnSearchDate.add(lblMinNgay);
+//        pnSearchDate.add(txtMinNgayLap);
+//        pnSearchDate.add(lblMaxNgay);
+//        pnSearchDate.add(txtMaxNgayLap);
+//        pnCTHoaDonLeft.add(pnSearchDate);
 
         Dimension lblHoaDonSize = lblTongTien.getPreferredSize();
         lblMaHD.setPreferredSize(lblHoaDonSize);
@@ -584,7 +588,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
         txtDonGiaCT.setEditable(false);
         txtThanhTienCT.setEditable(false);
 
-        pnCTHoaDonRight.add(pnTopCTHoaDonRight, BorderLayout.NORTH);
+//        pnCTHoaDonRight.add(pnTopCTHoaDonRight, BorderLayout.NORTH);
 
         dtmCTHoaDon = new DefaultTableModel();
         dtmCTHoaDon.addColumn("Mã HD");
@@ -594,13 +598,29 @@ public class PnQuanLyBanHangGUI extends JPanel {
         dtmCTHoaDon.addColumn("Thành tiền");
         tblCTHoaDon = new MyTable(dtmCTHoaDon);
         JScrollPane scrCTHoaDon = new JScrollPane(tblCTHoaDon);
-        pnCTHoaDonRight.add(scrCTHoaDon, BorderLayout.CENTER);
+        pnCTHoaDonLeft.add(scrCTHoaDon, BorderLayout.CENTER);
         loadDataTblCTHoaDon();
 
-        pnCTHoaDon.add(pnCTHoaDonRight, BorderLayout.CENTER);
+     
 
         //==========
         pnCardTabBanHang.add(pnCTHoaDon, "2");
+        /*
+        =========================================================================
+                                    PANEL GIỎ HÀNG
+        =========================================================================
+         */
+        JPanel pnGioHang = new JPanel();
+        pnGioHang.setLayout(new BoxLayout(pnGioHang, BoxLayout.Y_AXIS));
+        pnTableGioHang.setPreferredSize(new Dimension(1030,200));
+        pnButtonBanHang.setPreferredSize(new Dimension(1030,300));
+        pnGioHang.add(pnTableGioHang);
+        pnGioHang.add(pnButtonBanHang);
+        pnCardTabBanHang.add(pnGioHang, "3");
+
+        
+      
+        
 
         //=======================================================
         this.add(pnCardTabBanHang);
@@ -624,6 +644,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 lblTabbedHoaDon.setIcon(tabbedDefault);
                 lblTabbedBanHang.setIcon(tabbedSelected);
+                lblTabbedGioHang.setIcon(tabbedDefault);
                 cardBanHangGroup.show(pnCardTabBanHang, "1");
             }
 
@@ -649,7 +670,33 @@ public class PnQuanLyBanHangGUI extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 lblTabbedHoaDon.setIcon(tabbedSelected);
                 lblTabbedBanHang.setIcon(tabbedDefault);
+                  lblTabbedGioHang.setIcon(tabbedDefault);
                 cardBanHangGroup.show(pnCardTabBanHang, "2");
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+        });
+        lblTabbedGioHang.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                lblTabbedHoaDon.setIcon(tabbedDefault);
+                lblTabbedBanHang.setIcon(tabbedDefault);
+                lblTabbedGioHang.setIcon(tabbedSelected);
+                cardBanHangGroup.show(pnCardTabBanHang, "3");
             }
 
             @Override
@@ -1157,7 +1204,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
         DefaultListModel<String> listModel = new DefaultListModel<>();
         if (dshd != null) {
             for (HoaDon hd : dshd) {
-                listModel.addElement(hd.getMaHD() + " | " + hd.getNgayLap() + " === " + dcf.format(hd.getTongTien()) + " VND");
+                listModel.addElement(hd.getMaHD() + " | " + hd.getNgayLap() + " | " + dcf.format(hd.getTongTien()) + " VND");
             }
             listHoaDon.setModel(listModel);
         }
@@ -1242,4 +1289,5 @@ public class PnQuanLyBanHangGUI extends JPanel {
         ArrayList<HoaDon> listHoaDon = hoaDonBUS.getListHoaDonTheoGia(txtMinSearch.getText(), txtMaxSearch.getText());
         addDataListHoaDon(listHoaDon);
     }
+     
 }
