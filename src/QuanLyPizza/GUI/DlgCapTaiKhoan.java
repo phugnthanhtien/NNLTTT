@@ -58,10 +58,17 @@ public class DlgCapTaiKhoan extends javax.swing.JDialog {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(154, 205, 248));
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        pnTitle.setBackground(new java.awt.Color(21, 50, 186));
+        pnTitle.setForeground(new java.awt.Color(255, 255, 255));
+
+        lblTitle.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setText("Cấp tài khoản nhân viên");
         pnTitle.add(lblTitle);
+
+        pnInfo.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Mã Nhân viên");
@@ -97,7 +104,7 @@ public class DlgCapTaiKhoan extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(pnInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtMaNV)
-                    .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                    .addComponent(txtTenDangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(cmbQuyen, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -119,8 +126,14 @@ public class DlgCapTaiKhoan extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnTaoTaiKhoan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        btnTaoTaiKhoan.setBackground(new java.awt.Color(13, 97, 209));
+        btnTaoTaiKhoan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnTaoTaiKhoan.setText("Cấp tài khoản");
+        btnTaoTaiKhoan.setFocusPainted(false);
+        btnTaoTaiKhoan.setHideActionText(true);
         btnTaoTaiKhoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTaoTaiKhoanActionPerformed(evt);

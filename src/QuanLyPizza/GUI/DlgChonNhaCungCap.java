@@ -75,7 +75,10 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(21, 50, 186));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Chọn nhà cung cấp");
         jPanel1.add(jLabel1);
 
@@ -91,8 +94,17 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
             }
         ));
         jScrollPane1.setViewportView(tblNhaCungCap);
+        if (tblNhaCungCap.getColumnModel().getColumnCount() > 0) {
+            tblNhaCungCap.getColumnModel().getColumn(1).setMaxWidth(300);
+            tblNhaCungCap.getColumnModel().getColumn(2).setResizable(false);
+            tblNhaCungCap.getColumnModel().getColumn(2).setPreferredWidth(600);
+            tblNhaCungCap.getColumnModel().getColumn(3).setMaxWidth(200);
+        }
 
-        btnChonNCC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnChonNCC.setBackground(new java.awt.Color(13, 97, 209));
+        btnChonNCC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnChonNCC.setText("Chọn");
         btnChonNCC.setPreferredSize(new java.awt.Dimension(141, 40));
         btnChonNCC.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +114,8 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
         });
         jPanel2.add(btnChonNCC);
 
-        btnThemNCC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnThemNCC.setBackground(new java.awt.Color(13, 97, 209));
+        btnThemNCC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnThemNCC.setText("Thêm mới");
         btnThemNCC.setPreferredSize(new java.awt.Dimension(141, 40));
         btnThemNCC.addActionListener(new java.awt.event.ActionListener() {
@@ -112,9 +125,12 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
         });
         jPanel2.add(btnThemNCC);
 
-        btnSuaNCC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnSuaNCC.setBackground(new java.awt.Color(13, 97, 209));
+        btnSuaNCC.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnSuaNCC.setText("Sửa thông tin");
-        btnSuaNCC.setPreferredSize(new java.awt.Dimension(141, 40));
+        btnSuaNCC.setMaximumSize(new java.awt.Dimension(200, 29));
+        btnSuaNCC.setMinimumSize(new java.awt.Dimension(200, 29));
+        btnSuaNCC.setPreferredSize(new java.awt.Dimension(200, 40));
         btnSuaNCC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSuaNCCActionPerformed(evt);
@@ -127,8 +143,11 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 831, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,9 +155,9 @@ public class DlgChonNhaCungCap extends javax.swing.JDialog {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
