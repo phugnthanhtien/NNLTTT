@@ -34,7 +34,9 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -77,6 +79,9 @@ public class PnQuanLySanPhamGUI extends JPanel {
         pnTitle.add(btnReset);
         this.add(pnTitle);
 
+        JPanel pnContainer = new TransparentPanel();
+        pnContainer.setLayout(new BoxLayout(pnContainer, BoxLayout.X_AXIS));
+        
         JPanel pnThongTin = new TransparentPanel();
         pnThongTin.setLayout(new BoxLayout(pnThongTin, BoxLayout.X_AXIS));
 
@@ -156,6 +161,7 @@ public class PnQuanLySanPhamGUI extends JPanel {
         //=================PANEL ẢNH==========
         JPanel pnAnh = new TransparentPanel();
         pnAnh.setLayout(new BoxLayout(pnAnh, BoxLayout.Y_AXIS));
+        pnAnh.setBorder(new EmptyBorder(0, 0, 0, 60));
 
         JPanel pnChuaAnh = new TransparentPanel();
         pnChuaAnh.setPreferredSize(new Dimension((int) pnAnh.getPreferredSize().getWidth(), 250));
@@ -173,11 +179,10 @@ public class PnQuanLySanPhamGUI extends JPanel {
         btnChonAnh.setFont(font);
         pnButtonAnh.add(btnChonAnh);
         pnChuaAnh.add(pnButtonAnh);
-
         pnThongTin.add(pnAnh);
-        this.add(pnThongTin);
 
         JPanel pnButton = new TransparentPanel();
+        pnButton.setLayout(new BoxLayout(pnButton, BoxLayout.Y_AXIS));
 
         btnThem = new JButton("Thêm");
         btnSua = new JButton("Lưu");
@@ -201,6 +206,9 @@ public class PnQuanLySanPhamGUI extends JPanel {
         btnXuatExcel.setIcon(new ImageIcon("image/excel-icon.png"));
         btnNhapExcel.setIcon(new ImageIcon("image/excel-icon.png"));
 
+        JPanel pnThongTinTimKiem = new TransparentPanel();
+        pnThongTinTimKiem.setLayout(new BoxLayout(pnThongTinTimKiem, BoxLayout.Y_AXIS));
+        
         JPanel pnTimKiem = new TransparentPanel();
         JLabel lblTimKiem = new JLabel("Từ khoá tìm");
         lblTimKiem.setFont(font);
@@ -208,24 +216,31 @@ public class PnQuanLySanPhamGUI extends JPanel {
         txtTimKiem.setFont(font);
         pnTimKiem.add(lblTimKiem);
         pnTimKiem.add(txtTimKiem);
-        this.add(pnTimKiem);
-
+        pnTimKiem.add(btnTim);
+        
         pnButton.add(btnThem);
         pnButton.add(btnSua);
         pnButton.add(btnXoa);
-        pnButton.add(btnTim);
         pnButton.add(btnXuatExcel);
         pnButton.add(btnNhapExcel);
 
+        
         Dimension btnSize = btnTim.getPreferredSize();
-        btnThem.setPreferredSize(btnSize);
-        btnSua.setPreferredSize(btnSize);
-        btnXoa.setPreferredSize(btnSize);
-        btnTim.setPreferredSize(btnSize);
-        btnXuatExcel.setPreferredSize(btnSize);
-        btnNhapExcel.setPreferredSize(btnSize);
-
-        this.add(pnButton);
+        updateSize(btnSize, btnThem);
+        updateSize(btnSize, btnSua);
+        updateSize(btnSize, btnXoa);
+        updateSize(btnSize, btnTim);
+        updateSize(btnSize, btnXuatExcel);
+        updateSize(btnSize, btnNhapExcel);
+        pnButton.setBorder(new EmptyBorder(0, 0, 0, 30));
+        
+        pnThongTinTimKiem.setBorder(new EmptyBorder(0, -70, 0, 0));
+        
+        pnThongTinTimKiem.add(pnThongTin);
+        pnThongTinTimKiem.add(pnTimKiem);
+        pnContainer.add(pnThongTinTimKiem);
+        pnContainer.add(pnButton);
+        this.add(pnContainer);
 
         //============PANEL BẢNG===========
         JPanel pnTable = new TransparentPanel(new BorderLayout());
@@ -240,7 +255,7 @@ public class PnQuanLySanPhamGUI extends JPanel {
         dtmSanPham.addColumn("Đơn vị tính");
         dtmSanPham.addColumn("Ảnh");
         tblSanPham = new MyTable(dtmSanPham);
-
+        
         tblSanPham.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
         tblSanPham.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
         tblSanPham.getColumnModel().getColumn(4).setCellRenderer(centerRenderer);
@@ -262,6 +277,12 @@ public class PnQuanLySanPhamGUI extends JPanel {
 
         loadDataCmbLoai();
         loadDataLenBangSanPham();
+    }
+    
+    private void updateSize(Dimension d, JButton button) {
+        button.setPreferredSize(d);
+        button.setMaximumSize(d);
+        button.setMinimumSize(d);
     }
 
     private void addEventsSanPham() {
