@@ -31,7 +31,7 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
     }
 
     private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
-    final Color colorPanel = new Color(247, 247, 247);
+    final Color colorPanel = new Color(116,209,234);
 
     JButton btnReset, btnThem, btnSua;
     JTextField txtMa, txtTen, txtPhanTram, txtDieuKien;
@@ -53,25 +53,24 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         pnMain.setLayout(new BoxLayout(pnMain, BoxLayout.Y_AXIS));
 
         JPanel pnTitle = new TransparentPanel();
-        JLabel lblTitle = new JLabel("<html><h1>QUẢN LÝ MÃ KHUYẾN MÃI</h1></html>");
+        JLabel lblTitle = new JLabel("<html><h1>QUẢN LÝ CHƯƠNG TRÌNH KHUYẾN MÃI</h1></html>");
         btnReset = new JButton(new ImageIcon("image/Refresh-icon.png"));
         btnReset.setFocusPainted(false);
         btnReset.setPreferredSize(new Dimension(40, 40));
         pnTitle.add(lblTitle);
         pnTitle.add(btnReset);
-        pnMain.add(pnTitle);
+//        pnMain.add(pnTitle);
 
         //========TEXTFIELD=========
         JPanel pnTextField = new TransparentPanel();
         pnTextField.setLayout(new BoxLayout(pnTextField, BoxLayout.Y_AXIS));
-
         JLabel lblMa, lblTen, lblPhanTram, lblDieuKien, lblNgayBD, lblNgayKT;
-        lblMa = new JLabel("Mã Khuyến mãi");
-        lblTen = new JLabel("Tên chương trình");
+        lblMa = new JLabel("Mã Khuyến Mãi");
+        lblTen = new JLabel("Tên Khuyến Mãi");
         lblPhanTram = new JLabel("Phần trăm giảm");
         lblDieuKien = new JLabel("Điều kiện (>x)");
-        lblNgayBD = new JLabel("Ngày bắt đầu");
-        lblNgayKT = new JLabel("Ngày kết thúc");
+        lblNgayBD = new JLabel("Bắt đầu");
+        lblNgayKT = new JLabel("Kết thúc");
 
         lblMa.setFont(font);
         lblTen.setFont(font);
@@ -79,16 +78,20 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         lblDieuKien.setFont(font);
         lblNgayBD.setFont(font);
         lblNgayKT.setFont(font);
-
+        
         txtMa = new JTextField(20);
+        txtMa.setPreferredSize(new Dimension(100,30));
         txtTen = new JTextField(20);
+        txtTen.setPreferredSize(new Dimension(100,30));
         txtPhanTram = new JTextField(20);
+        txtPhanTram.setPreferredSize(new Dimension(100,30));
         txtDieuKien = new JTextField(20);
+        txtDieuKien.setPreferredSize(new Dimension(100,30));
         dateBD = new JDateChooser();
         dateBD.setDateFormatString("dd/MM/yyyy");
+   
         dateKT = new JDateChooser();
         dateKT.setDateFormatString("dd/MM/yyyy");
-
         txtMa.setEditable(false);
         dateBD.getCalendarButton().setPreferredSize(new Dimension(32, 32));
         dateBD.getCalendarButton().setIcon(new ImageIcon("image/icons8_calendar_25_20px.png"));
@@ -132,9 +135,9 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         pnNgayKT.add(dateKT);
         pnTextField.add(pnNgayKT);
 
-        pnMain.add(pnTextField);
+//        pnMain.add(pnTextField);
 
-        Dimension lblSize = lblTen.getPreferredSize();
+        Dimension lblSize = new Dimension(180,20);
         lblMa.setPreferredSize(lblSize);
         lblTen.setPreferredSize(lblSize);
         lblPhanTram.setPreferredSize(lblSize);
@@ -154,11 +157,11 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         btnSua.setIcon(new ImageIcon("image/Pencil-icon.png"));
         pnButton.add(btnThem);
         pnButton.add(btnSua);
-        pnMain.add(pnButton);
+//        pnMain.add(pnButton);
         btnSua.setPreferredSize(btnThem.getPreferredSize());
 
         //======================TABLE======================
-        JPanel pnTable = new TransparentPanel(new BorderLayout());
+        JPanel pnTable = new TransparentPanel();
         dtmKhuyenMai = new DefaultTableModel();
         dtmKhuyenMai.addColumn("Mã KM");
         dtmKhuyenMai.addColumn("Chương trình");
@@ -167,34 +170,32 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         dtmKhuyenMai.addColumn("Ngày bắt đầu");
         dtmKhuyenMai.addColumn("Ngày kết thúc");
         dtmKhuyenMai.addColumn("Tình trạng");
-
         tblKhuyenMai = new MyTable(dtmKhuyenMai);
         JScrollPane scrTblKhuyenMai = new JScrollPane(tblKhuyenMai);
-
+        scrTblKhuyenMai.setPreferredSize(new Dimension(1030,180));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         tblKhuyenMai.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
-
         DefaultTableCellRenderer rightRenderer = new DefaultTableCellRenderer();
         rightRenderer.setHorizontalAlignment(JLabel.CENTER);
         tblKhuyenMai.getColumnModel().getColumn(3).setCellRenderer(rightRenderer);
         tblKhuyenMai.getColumnModel().getColumn(4).setCellRenderer(rightRenderer);
         tblKhuyenMai.getColumnModel().getColumn(5).setCellRenderer(rightRenderer);
-
         TableColumnModel columnModelBanHang = tblKhuyenMai.getColumnModel();
-        columnModelBanHang.getColumn(0).setPreferredWidth(24);
-        columnModelBanHang.getColumn(1).setPreferredWidth(189);
-        columnModelBanHang.getColumn(2).setPreferredWidth(66);
+        columnModelBanHang.getColumn(0).setPreferredWidth(30);
+        columnModelBanHang.getColumn(1).setPreferredWidth(200);
+        columnModelBanHang.getColumn(2).setPreferredWidth(80);
         columnModelBanHang.getColumn(3).setPreferredWidth(56);
         columnModelBanHang.getColumn(4).setPreferredWidth(81);
         columnModelBanHang.getColumn(5).setPreferredWidth(81);
         columnModelBanHang.getColumn(6).setPreferredWidth(92);
-
-        pnTable.add(scrTblKhuyenMai, BorderLayout.CENTER);
+        pnTable.add(scrTblKhuyenMai);
+//        pnMain.add(pnTable);
+        pnMain.add(pnTitle);
         pnMain.add(pnTable);
-
-        this.add(pnMain, BorderLayout.CENTER);
-
+        pnMain.add(pnTextField,BorderLayout.CENTER);
+        pnMain.add(pnButton);
+        this.add(pnMain,BorderLayout.CENTER);
         loadDataTblKhuyenMai();
     }
 
