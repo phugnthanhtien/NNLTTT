@@ -32,7 +32,7 @@ public class PnQuanLyKhachHangGUI extends JPanel {
 
     private KhachHangBUS khachHangBUS = new KhachHangBUS();
 
-    final Color colorPanel = new Color(247, 247, 247);
+    final Color colorPanel = new Color(116,209,234);
     JButton btnReset;
     JTextField txtMa, txtHo, txtTen, txtTongChiTieu, txtTukhoa, txtMaxChiTieu, txtMinchiTieu;
     JComboBox<String> cmbGioiTinh;
@@ -63,9 +63,17 @@ public class PnQuanLyKhachHangGUI extends JPanel {
         JLabel lblTitle = new JLabel("<html><h1>QUẢN LÝ KHÁCH HÀNG</h1></html>");
         btnReset = new JButton(new ImageIcon("image/Refresh-icon.png"));
         btnReset.setPreferredSize(new Dimension(40, 40));
+        JPanel pnTimKiem = new TransparentPanel();
+        JLabel lblTimKiem = new JLabel("Tìm kiếm ");
+        lblTimKiem.setFont(font);
+        txtTukhoa = new JTextField(20);
+        txtTukhoa.setFont(font);
+        pnTimKiem.add(lblTimKiem);
+        pnTimKiem.add(txtTukhoa);
         pnTitle.add(lblTitle);
         pnTitle.add(btnReset);
-        pnTopKH.add(pnTitle);
+        pnTitle.add(pnTimKiem);
+    
 
         //======PANEL TEXT FIELD=======
         JPanel pnTextField = new TransparentPanel();
@@ -166,14 +174,14 @@ public class PnQuanLyKhachHangGUI extends JPanel {
         btnXoa.setPreferredSize(btnSize);
 
         //====PANEL SEARCH=====
-        JPanel pnTimKiem = new TransparentPanel();
-        JLabel lblTimKiem = new JLabel("Từ khoá tìm");
-        lblTimKiem.setFont(font);
-        txtTukhoa = new JTextField(20);
-        txtTukhoa.setFont(font);
-        pnTimKiem.add(lblTimKiem);
-        pnTimKiem.add(txtTukhoa);
-        pnKhachHang.add(pnTimKiem);
+//        JPanel pnTimKiem = new TransparentPanel();
+//        JLabel lblTimKiem = new JLabel("Tìm kiếm ");
+//        lblTimKiem.setFont(font);
+//        txtTukhoa = new JTextField(20);
+//        txtTukhoa.setFont(font);
+//        pnTimKiem.add(lblTimKiem);
+//        pnTimKiem.add(txtTukhoa);
+//        pnKhachHang.add(pnTimKiem);
 
         JPanel pnTimGioiHan = new TransparentPanel();
         JLabel lblMin = new JLabel("Chi tiêu từ:");
@@ -188,12 +196,12 @@ public class PnQuanLyKhachHangGUI extends JPanel {
         txtMaxChiTieu.setFont(font);
         btnTim = new JButton(new ImageIcon("image/Search-icon.png"));
         btnTim = new JButton(new ImageIcon("image/Search-icon.png"));
-        pnTimGioiHan.add(lblMin);
-        pnTimGioiHan.add(txtMinchiTieu);
-        pnTimGioiHan.add(lblMax);
-        pnTimGioiHan.add(txtMaxChiTieu);
-        pnTimGioiHan.add(btnTim);
-        pnKhachHang.add(pnTimGioiHan);
+//        pnTimGioiHan.add(lblMin);
+//        pnTimGioiHan.add(txtMinchiTieu);
+//        pnTimGioiHan.add(lblMax);
+//        pnTimGioiHan.add(txtMaxChiTieu);
+//        pnTimGioiHan.add(btnTim);
+//        pnKhachHang.add(pnTimGioiHan);
         //=========================TABLE=====================
         dtmKhachHang = new DefaultTableModel();
         dtmKhachHang.addColumn("Mã KH");
@@ -205,9 +213,13 @@ public class PnQuanLyKhachHangGUI extends JPanel {
         tblKhachHang = new MyTable(dtmKhachHang);
 
         JScrollPane scrtblKhachHang = new JScrollPane(tblKhachHang);
-
-        this.add(pnKhachHang, BorderLayout.NORTH);
-        this.add(scrtblKhachHang, BorderLayout.CENTER);
+        scrtblKhachHang.setPreferredSize(new Dimension(1030,180));
+        JPanel pnTable = new TransparentPanel();
+        pnTable.setLayout(new BoxLayout(pnTable, BoxLayout.Y_AXIS));
+        pnTable.add(pnTitle);
+        pnTable.add(scrtblKhachHang);
+        this.add(pnKhachHang, BorderLayout.CENTER);
+        this.add(pnTable, BorderLayout.NORTH);
 
         loadDataLenTableKhachHang();
     }

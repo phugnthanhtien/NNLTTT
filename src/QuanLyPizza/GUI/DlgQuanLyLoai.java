@@ -50,20 +50,24 @@ public class DlgQuanLyLoai extends javax.swing.JDialog {
         pnMaLoai = new javax.swing.JPanel();
         lblMaLoai = new javax.swing.JLabel();
         txtMaLoai = new javax.swing.JTextField();
-        pnTenLoai = new javax.swing.JPanel();
         lblTenLoai = new javax.swing.JLabel();
         txtTenLoai = new javax.swing.JTextField();
+        pnTenLoai = new javax.swing.JPanel();
         pnButton = new javax.swing.JPanel();
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(116, 209, 234));
         setLocation(new java.awt.Point(0, 0));
         setModal(true);
 
+        jPanel1.setBackground(new java.awt.Color(116, 209, 234));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("QUẢN LÝ LOẠI");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("QUẢN LÝ LOẠI SẢN PHẨM");
         jPanel1.add(jLabel1);
 
         tblLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -98,7 +102,10 @@ public class DlgQuanLyLoai extends javax.swing.JDialog {
 
         jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.Y_AXIS));
 
+        pnMaLoai.setBackground(new java.awt.Color(116, 209, 234));
+
         lblMaLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblMaLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblMaLoai.setText("Mã loại");
         lblMaLoai.setPreferredSize(new java.awt.Dimension(63, 22));
         pnMaLoai.add(lblMaLoai);
@@ -108,19 +115,24 @@ public class DlgQuanLyLoai extends javax.swing.JDialog {
         txtMaLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         pnMaLoai.add(txtMaLoai);
 
-        jPanel3.add(pnMaLoai);
-
         lblTenLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTenLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblTenLoai.setText("Tên loại");
-        pnTenLoai.add(lblTenLoai);
+        pnMaLoai.add(lblTenLoai);
 
         txtTenLoai.setColumns(15);
         txtTenLoai.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        pnTenLoai.add(txtTenLoai);
+        pnMaLoai.add(txtTenLoai);
 
+        jPanel3.add(pnMaLoai);
+
+        pnTenLoai.setBackground(new java.awt.Color(116, 209, 234));
         jPanel3.add(pnTenLoai);
 
+        pnButton.setBackground(new java.awt.Color(116, 209, 234));
+
         btnThem.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnThem.setForeground(new java.awt.Color(0, 255, 255));
         btnThem.setText("Thêm");
         btnThem.setPreferredSize(new java.awt.Dimension(80, 35));
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +153,7 @@ public class DlgQuanLyLoai extends javax.swing.JDialog {
         pnButton.add(btnSua);
 
         btnXoa.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnXoa.setForeground(new java.awt.Color(255, 0, 51));
         btnXoa.setText("Xoá");
         btnXoa.setPreferredSize(new java.awt.Dimension(80, 35));
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
@@ -157,14 +170,14 @@ public class DlgQuanLyLoai extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 753, Short.MAX_VALUE)
             .addComponent(pnTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
