@@ -31,7 +31,7 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
     }
 
     private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
-    final Color colorPanel = new Color(116,209,234);
+    final Color colorPanel = new Color(255,255,255);
 
     JButton btnReset, btnThem, btnSua;
     JTextField txtMa, txtTen, txtPhanTram, txtDieuKien;
