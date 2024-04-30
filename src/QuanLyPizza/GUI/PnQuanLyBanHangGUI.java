@@ -39,7 +39,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
     JLabel lblTabbedBanHang, lblTabbedHoaDon,lblTabbedGioHang;
     final ImageIcon tabbedSelected = new ImageIcon("image/ManagerUI/tabbed-btn--selected.png");
     final ImageIcon tabbedDefault = new ImageIcon("image/ManagerUI/tabbed-btn.png");
-    final Color colorPanel = new Color(116,209,234);
+    final Color colorPanel = new Color(255,255,255);
     CardLayout cardBanHangGroup = new CardLayout();
     JPanel pnCardTabBanHang;
     MyTable tblBanHang, tblGioHang;

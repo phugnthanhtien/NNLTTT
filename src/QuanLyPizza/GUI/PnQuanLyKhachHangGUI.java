@@ -32,7 +32,7 @@ public class PnQuanLyKhachHangGUI extends JPanel {
 
     private KhachHangBUS khachHangBUS = new KhachHangBUS();
 
-    final Color colorPanel = new Color(116,209,234);
+    final Color colorPanel = new Color(255,255,255);
     JButton btnReset;
     JTextField txtMa, txtHo, txtTen, txtTongChiTieu, txtTukhoa, txtMaxChiTieu, txtMinchiTieu;
     JComboBox<String> cmbGioiTinh;
