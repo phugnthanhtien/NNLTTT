@@ -17,12 +17,12 @@ public class MyTable extends JTable {
         this.setFocusable(false);
         this.setIntercellSpacing(new Dimension(0, 0));
         this.setRowHeight(25);
-        this.setSelectionBackground(new Color(50, 154, 114));
+        this.setSelectionBackground(new Color(154, 205, 248));
         this.setSelectionForeground(Color.white);
         this.setFont(new Font("Arial", Font.PLAIN, 16));
 
         JTableHeader header = this.getTableHeader();
-        header.setBackground(new Color(242, 153, 74));
+        header.setBackground(new Color(21, 50, 186));
         header.setFont(new Font("Arial", Font.BOLD, 16));
         header.setOpaque(false);
         header.setForeground(Color.WHITE);

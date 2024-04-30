@@ -30,12 +30,19 @@ public class DlgDoiMatKhau extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(21, 50, 186));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Đổi mật khẩu");
         jPanel1.add(jLabel1);
 
-        btnXacNhan.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnXacNhan.setBackground(new java.awt.Color(13, 97, 209));
+        btnXacNhan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnXacNhan.setText("Xác nhận");
+        btnXacNhan.setHideActionText(true);
         btnXacNhan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnXacNhanActionPerformed(evt);
@@ -43,7 +50,8 @@ public class DlgDoiMatKhau extends javax.swing.JDialog {
         });
         jPanel3.add(btnXacNhan);
 
-        btnHuy.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnHuy.setBackground(new java.awt.Color(13, 97, 209));
+        btnHuy.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnHuy.setText("Huỷ");
         btnHuy.setPreferredSize(new java.awt.Dimension(105, 31));
         btnHuy.addActionListener(new java.awt.event.ActionListener() {
@@ -52,6 +60,8 @@ public class DlgDoiMatKhau extends javax.swing.JDialog {
             }
         });
         jPanel3.add(btnHuy);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Mật khẩu cũ");
@@ -123,7 +133,7 @@ public class DlgDoiMatKhau extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(

@@ -188,7 +188,7 @@ public class MyDialog extends JDialog {
 
     private void showWindow() {
         this.setUndecorated(true);
-        this.setSize(400, 250);
+        this.setSize(300, 220);
         this.setLocationRelativeTo(null);
         this.setAlwaysOnTop(true);
         this.setModal(true);

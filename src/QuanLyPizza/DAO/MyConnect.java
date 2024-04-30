@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
@@ -21,13 +22,10 @@ public class MyConnect {
     public MyConnect() {
         docFileText();
 
-        String strConnect = "jdbc:mysql://" + severName + "/" + dbName + "?useUnicode=true&characterEncoding=utf-8";
-        Properties pro = new Properties();
-        pro.put("user", userName);
-        pro.put("password", password);
+        String strConnect = "jdbc:mysql://localhost:3306/quanlycuahang";
         try {
             com.mysql.jdbc.Driver driver = new Driver();
-            conn = driver.connect(strConnect, pro);
+            conn = DriverManager.getConnection(strConnect, "root","120703");
         } catch (SQLException ex) {
             new MyDialog("Không kết nối được tới CSDL!", MyDialog.ERROR_DIALOG);
             System.exit(0);

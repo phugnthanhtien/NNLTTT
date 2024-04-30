@@ -12,7 +12,7 @@ import javax.swing.*;
 public class MainQuanLyGUI extends JFrame {
 
     public MainQuanLyGUI() {
-        this.setTitle("Phần mềm quản lý cửa hàng pizza");
+        this.setTitle("Quản lý cửa hàng đồ chơi");
         this.setSize(1280, 900);
         Image icon = Toolkit.getDefaultToolkit().getImage("image/ManagerUI/icon-app.png");
         this.setIconImage(icon);
@@ -60,7 +60,7 @@ public class MainQuanLyGUI extends JFrame {
          */
         pnTitle = new JPanel(null);
         pnTitle.setPreferredSize(new Dimension(width, 46));
-        pnTitle.setBackground(new Color(242, 153, 74));
+        pnTitle.setBackground(new Color(31, 160, 154));
 
         btnDoiMatKhau = new JLabel(new ImageIcon("image/ManagerUI/icons8_gear_46px.png"));
         btnDoiMatKhau.setToolTipText("Đổi mật khẩu");
