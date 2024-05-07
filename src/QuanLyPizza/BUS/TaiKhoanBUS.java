@@ -49,7 +49,7 @@ public class TaiKhoanBUS {
             return false;
         }
         if (kiemTraTrungTenDangNhap(tenDangNhap)) {
-            MyDialog dlg = new MyDialog("Tên đăng nhập bị trùng! Có thể tài khoản bị khoá, thực hiện mở khoá?", MyDialog.WARNING_DIALOG);
+            MyDialog dlg = new MyDialog("<html>Tên đăng nhập bị trùng!<br>Có thể tài khoản bị khoá, <br>thực hiện mở khoá?</html>", MyDialog.WARNING_DIALOG);
             if (dlg.getAction() == MyDialog.OK_OPTION) {
                 moKhoaTaiKhoan(ma);
                 return true;
@@ -58,9 +58,9 @@ public class TaiKhoanBUS {
         }
         boolean flag = taiKhoanDAO.themTaiKhoan(maNV, tenDangNhap, quyen);
         if (flag) {
-            new MyDialog("Cấp tài khoản thành công! Mật khẩu là " + tenDangNhap, MyDialog.SUCCESS_DIALOG);
+            new MyDialog("<html>Cấp tài khoản thành công!<br>Mật khẩu là </html>" + tenDangNhap, MyDialog.SUCCESS_DIALOG);
         } else {
-            new MyDialog("Cấp tài khoản thất bại! Tài khoản đã tồn tại", MyDialog.ERROR_DIALOG);
+            new MyDialog("<html>Cấp tài khoản thất bại!<br>Tài khoản đã tồn tại</html>", MyDialog.ERROR_DIALOG);
         }
         return flag;
     }
