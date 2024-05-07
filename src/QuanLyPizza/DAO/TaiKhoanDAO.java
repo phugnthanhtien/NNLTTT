@@ -11,13 +11,14 @@ public class TaiKhoanDAO {
 
     public boolean themTaiKhoan(int maNV, String tenDangNhap, String quyen) {
         try {
-            String sql = "INSERT INTO taikhoan(MaNV, TenDangNhap, MatKhau, Quyen) "
-                    + "VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO taikhoan(MaNV, TenDangNhap, MatKhau, Quyen, TrangThai) "
+                    + "VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
             pre.setInt(1, maNV);
             pre.setString(2, tenDangNhap);
             pre.setString(3, tenDangNhap);
             pre.setString(4, quyen);
+            pre.setInt(5, 1);
             return pre.executeUpdate() > 0;
         } catch (Exception e) {
         }
