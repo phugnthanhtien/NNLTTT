@@ -12,11 +12,13 @@ import QuanLyPizza.BUS.CTPhieuNhapBUS;
 import QuanLyPizza.BUS.PhieuNhapBUS;
 import QuanLyPizza.DTO.PhieuNhap;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JLabel;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.UIManager;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -1063,6 +1065,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
 
     private void loadDataTableCTPhieuNhap() {
         dtmCTPhieuNhap.setRowCount(0);
+        ctPhieuNhapBUS.docDanhSach();
         ArrayList<CTPhieuNhap> dsct = ctPhieuNhapBUS.getListPhieuNhap();
         if (dsct != null) {
             for (CTPhieuNhap ct : dsct) {
