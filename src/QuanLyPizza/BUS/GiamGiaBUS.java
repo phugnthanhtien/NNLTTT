@@ -105,4 +105,14 @@ public class GiamGiaBUS {
         }
         return flag;
     }
+    
+    public boolean xoaMaGiam(int maGiam) {
+    boolean flag = giamGiaDAO.xoaMaGiam(maGiam);
+    if (flag) {
+        new MyDialog("Xóa thành công!", MyDialog.SUCCESS_DIALOG);
+    } else {
+        new MyDialog("Xóa thất bại!", MyDialog.ERROR_DIALOG);
+    }
+    return flag;
+}
 }

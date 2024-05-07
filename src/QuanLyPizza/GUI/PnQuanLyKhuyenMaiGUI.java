@@ -31,9 +31,9 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
     }
 
     private GiamGiaBUS giamGiaBUS = new GiamGiaBUS();
-    final Color colorPanel = new Color(255,255,255);
+    final Color colorPanel = new Color(255, 255, 255);
 
-    JButton btnReset, btnThem, btnSua;
+    JButton btnReset, btnThem, btnSua, btnXoa;
     JTextField txtMa, txtTen, txtPhanTram, txtDieuKien;
     MyTable tblKhuyenMai;
     DefaultTableModel dtmKhuyenMai;
@@ -78,18 +78,18 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         lblDieuKien.setFont(font);
         lblNgayBD.setFont(font);
         lblNgayKT.setFont(font);
-        
+
         txtMa = new JTextField(20);
-        txtMa.setPreferredSize(new Dimension(100,30));
+        txtMa.setPreferredSize(new Dimension(100, 30));
         txtTen = new JTextField(20);
-        txtTen.setPreferredSize(new Dimension(100,30));
+        txtTen.setPreferredSize(new Dimension(100, 30));
         txtPhanTram = new JTextField(20);
-        txtPhanTram.setPreferredSize(new Dimension(100,30));
+        txtPhanTram.setPreferredSize(new Dimension(100, 30));
         txtDieuKien = new JTextField(20);
-        txtDieuKien.setPreferredSize(new Dimension(100,30));
+        txtDieuKien.setPreferredSize(new Dimension(100, 30));
         dateBD = new JDateChooser();
         dateBD.setDateFormatString("dd/MM/yyyy");
-   
+
         dateKT = new JDateChooser();
         dateKT.setDateFormatString("dd/MM/yyyy");
         txtMa.setEditable(false);
@@ -136,8 +136,7 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         pnTextField.add(pnNgayKT);
 
 //        pnMain.add(pnTextField);
-
-        Dimension lblSize = new Dimension(180,20);
+        Dimension lblSize = new Dimension(180, 20);
         lblMa.setPreferredSize(lblSize);
         lblTen.setPreferredSize(lblSize);
         lblPhanTram.setPreferredSize(lblSize);
@@ -151,14 +150,18 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         JPanel pnButton = new TransparentPanel();
         btnThem = new JButton("Thêm");
         btnSua = new JButton("Sửa");
+        btnXoa = new JButton("Xoá");
         btnThem.setFont(font);
         btnSua.setFont(font);
         btnThem.setIcon(new ImageIcon("image/add-icon.png"));
         btnSua.setIcon(new ImageIcon("image/Pencil-icon.png"));
+        btnXoa.setIcon(new ImageIcon("image/delete-icon.png"));
         pnButton.add(btnThem);
         pnButton.add(btnSua);
+        pnButton.add(btnXoa);
 //        pnMain.add(pnButton);
         btnSua.setPreferredSize(btnThem.getPreferredSize());
+        btnXoa.setPreferredSize(btnThem.getPreferredSize());
 
         //======================TABLE======================
         JPanel pnTable = new TransparentPanel();
@@ -172,7 +175,7 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
         dtmKhuyenMai.addColumn("Tình trạng");
         tblKhuyenMai = new MyTable(dtmKhuyenMai);
         JScrollPane scrTblKhuyenMai = new JScrollPane(tblKhuyenMai);
-        scrTblKhuyenMai.setPreferredSize(new Dimension(1030,180));
+        scrTblKhuyenMai.setPreferredSize(new Dimension(1030, 180));
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment(JLabel.CENTER);
         tblKhuyenMai.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
@@ -193,9 +196,9 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
 //        pnMain.add(pnTable);
         pnMain.add(pnTitle);
         pnMain.add(pnTable);
-        pnMain.add(pnTextField,BorderLayout.CENTER);
+        pnMain.add(pnTextField, BorderLayout.CENTER);
         pnMain.add(pnButton);
-        this.add(pnMain,BorderLayout.CENTER);
+        this.add(pnMain, BorderLayout.CENTER);
         loadDataTblKhuyenMai();
     }
 
@@ -234,6 +237,13 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 xuLySuaKhuyenMai();
+            }
+        });
+
+        btnXoa.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xuLyXoaKhuyenMai();
             }
         });
     }
@@ -295,13 +305,23 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
 
     private void xuLyThemKhuyenMai() {
         boolean flag = giamGiaBUS.themMaGiam(txtTen.getText(), txtPhanTram.getText(), txtDieuKien.getText(), dateBD.getDate(), dateKT.getDate());
-        if (flag)
+        if (flag) {
             loadDataTblKhuyenMai();
+        }
     }
 
     private void xuLySuaKhuyenMai() {
         boolean flag = giamGiaBUS.suaMaGiam(txtMa.getText(), txtTen.getText(), txtPhanTram.getText(), txtDieuKien.getText(), dateBD.getDate(), dateKT.getDate());
-        if (flag)
+        if (flag) {
             loadDataTblKhuyenMai();
+        }
+    }
+
+    private void xuLyXoaKhuyenMai() {
+        int maGiam = Integer.parseInt(txtMa.getText());
+        boolean flag = giamGiaBUS.xoaMaGiam(maGiam);
+        if (flag) {
+            loadDataTblKhuyenMai();
+        } 
     }
 }

@@ -68,4 +68,16 @@ public class GiamGiaDAO {
         }
         return false;
     }
+    
+    public boolean xoaMaGiam(int maGiam) {
+    try {
+        String sql = "DELETE FROM giamgia WHERE MaGiam = ?";
+        PreparedStatement pre = MyConnect.conn.prepareStatement(sql);
+        pre.setInt(1, maGiam);
+        return pre.executeUpdate() > 0;
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return false;
+}
 }
