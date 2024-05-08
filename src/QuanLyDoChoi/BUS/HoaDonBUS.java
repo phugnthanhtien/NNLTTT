@@ -17,6 +17,10 @@ public class HoaDonBUS {
         listHoaDon = hoaDonDAO.getListHoaDon();
         return listHoaDon;
     }
+    
+    public void resetData() {
+        listHoaDon = null;
+    }
 
     public void luuHoaDon(int maKH, String nhanVien, int tongTien, String ghiChu) {
         HoaDon hd = new HoaDon();
