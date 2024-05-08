@@ -47,10 +47,8 @@ public class KhachHangBUS {
         tuKhoa = tuKhoa.toLowerCase();
         ArrayList<KhachHang> dskh = new ArrayList<>();
         for (KhachHang kh : listKhachHang) {
-            String ho = kh.getHo().toLowerCase();
             String ten = kh.getTen().toLowerCase();
-            String gioiTinh = kh.getGioiTinh().toLowerCase();
-            if (ho.contains(tuKhoa) || ten.contains(tuKhoa) || gioiTinh.contains(tuKhoa)) {
+            if (ten.contains(tuKhoa)) {
                 dskh.add(kh);
             }
         }

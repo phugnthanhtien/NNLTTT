@@ -22,6 +22,7 @@ public class DangNhapGUI extends JFrame {
         addControls();
         xuLyTaiKhoanDaGhiNho();
         addEvents();
+        dispose();
     }
 
     private void xuLyTaiKhoanDaGhiNho() {
@@ -97,7 +98,7 @@ public class DangNhapGUI extends JFrame {
         pnMain.add(txtPassword);
         pnMain.add(ckbRemember);
         pnMain.add(btnLogin);
-        pnMain.add(btnForgot);
+//        pnMain.add(btnForgot);
 
         con.add(pnMain);
     }
@@ -132,6 +133,7 @@ public class DangNhapGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 txtPassword.requestFocus();
+                dispose();
             }
         });
         txtPassword.addActionListener(new ActionListener() {
@@ -231,6 +233,11 @@ public class DangNhapGUI extends JFrame {
             this.dispose();
             gui.showWindow();
         }
+    }
+    public void Reset(){
+        txtUser.setText("");
+        txtPassword.setText("");
+        ckbRemember.setSelected(false);
     }
 
     public void showWindow() {
