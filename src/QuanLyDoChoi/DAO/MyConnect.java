@@ -1,4 +1,4 @@
-package QuanLyPizza.DAO;
+package QuanLyDoChoi.DAO;
 
 import MyCustom.MyDialog;
 import com.mysql.jdbc.Driver;
