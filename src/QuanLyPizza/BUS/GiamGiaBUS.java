@@ -38,6 +38,14 @@ public class GiamGiaBUS {
             new MyDialog("Ngày kết thúc không hợp lệ!", MyDialog.ERROR_DIALOG);
             return false;
         }
+        if(phanTram.contains("-")){
+            new MyDialog("Phần trăm được giảm phải là số dương", MyDialog.ERROR_DIALOG);
+            return false;
+        }
+            if(dieuKien.contains("-")){
+            new MyDialog("Điều kiện giảm phải là số dương", MyDialog.ERROR_DIALOG);
+            return false;
+        }
         boolean flag = false;
         try {
             int phanTramGiam = Integer.parseInt(phanTram);
@@ -77,6 +85,14 @@ public class GiamGiaBUS {
         }
         if (ngayBD.compareTo(ngayKT) > 0 || ngayBD.compareTo(ngayKT) == 0) {
             new MyDialog("Ngày kết thúc không hợp lệ!", MyDialog.ERROR_DIALOG);
+            return false;
+        }
+        if(phanTram.contains("-")){
+            new MyDialog("Phần trăm được giảm phải là số dương", MyDialog.ERROR_DIALOG);
+            return false;
+        }
+            if(dieuKien.contains("-")){
+            new MyDialog("Điều kiện giảm phải là số dương", MyDialog.ERROR_DIALOG);
             return false;
         }
         boolean flag = false;

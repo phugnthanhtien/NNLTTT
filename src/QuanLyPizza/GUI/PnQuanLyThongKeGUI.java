@@ -98,7 +98,7 @@ public class PnQuanLyThongKeGUI extends JPanel {
         lblThongKeDoanhThu.setBounds(563, 350, 369, 87);
 
         pnThongKeTong.add(lblTileThongKeTong);
-        pnThongKeTong.add(btnView);
+//        pnThongKeTong.add(btnView);
         pnThongKeTong.add(lblThongKeThucDon);
         pnThongKeTong.add(lblThongKeKhachHang);
         pnThongKeTong.add(lblThongKeNhanVien);
@@ -135,19 +135,19 @@ public class PnQuanLyThongKeGUI extends JPanel {
         lblDoanhThuQuy3.setBounds(x += 167, y, 167, 63);
         lblDoanhThuQuy4.setBounds(x += 167, y, 167, 63);
         lblTongDoanhThu.setBounds(265, 735, 667, 63);
-
-        pnThongKeTong.add(lblTongDoanhThu);
-        pnThongKeTong.add(lblDoanhThuQuy1);
-        pnThongKeTong.add(lblDoanhThuQuy2);
-        pnThongKeTong.add(lblDoanhThuQuy3);
-        pnThongKeTong.add(lblDoanhThuQuy4);
+//
+//        pnThongKeTong.add(lblTongDoanhThu);
+//        pnThongKeTong.add(lblDoanhThuQuy1);
+//        pnThongKeTong.add(lblDoanhThuQuy2);
+//        pnThongKeTong.add(lblDoanhThuQuy3);
+//        pnThongKeTong.add(lblDoanhThuQuy4);
 
         cmbNam = new JComboBox<>();
         int year = Calendar.getInstance().get(Calendar.YEAR);
         for (int i = year; i >= year - 10; i--)
             cmbNam.addItem(i);
         cmbNam.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        cmbNam.setBounds(w / 2 - 100 / 2, 560, 120, 35);
+        cmbNam.setBounds(700 , 30, 120, 35);
         pnThongKeTong.add(cmbNam);
         
         btn_filter = new JButton("Chi tiết");
@@ -157,7 +157,7 @@ public class PnQuanLyThongKeGUI extends JPanel {
 
         JLabel lblBackgroundBang = new JLabel(new ImageIcon("image/ManagerUI/bangThongKe.png"));
         lblBackgroundBang.setBounds(98, 610, 834, 189);
-        pnThongKeTong.add(lblBackgroundBang);
+//        pnThongKeTong.add(lblBackgroundBang);
 
         pnMain.add(pnThongKeTong, "1");
 
@@ -245,7 +245,7 @@ public class PnQuanLyThongKeGUI extends JPanel {
         pnChart.add(chartPanel);
         //================================
         pnThongKeChiTiet.add(pnChart);
-        pnMain.add(pnThongKeChiTiet, "2");
+//        pnMain.add(pnThongKeChiTiet, "2");
 
         this.add(pnMain, BorderLayout.CENTER);
         hienThiThongKe();

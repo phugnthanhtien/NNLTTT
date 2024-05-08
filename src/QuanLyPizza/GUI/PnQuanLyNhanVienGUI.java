@@ -89,7 +89,7 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         lblTabbedQuyen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         pnTop.add(lblTabbedNhanVien);
-        pnTop.add(lblTabbedQuyen);
+//        pnTop.add(lblTabbedQuyen);
         //</editor-fold>
         this.add(pnTop, BorderLayout.NORTH);
 
@@ -371,7 +371,7 @@ public class PnQuanLyNhanVienGUI extends JPanel {
         //========================
         pnCardTabNhanVien = new JPanel(cardNhanVienGroup);
         pnCardTabNhanVien.add(pnNhanVien, "1");
-        pnCardTabNhanVien.add(pnLayoutPhanQuyen, "2");
+//        pnCardTabNhanVien.add(pnLayoutPhanQuyen, "2");
         this.add(pnCardTabNhanVien);
 
         loadDataTblNhanVien();
