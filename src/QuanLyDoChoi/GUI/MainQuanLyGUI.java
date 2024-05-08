@@ -315,7 +315,7 @@ public class MainQuanLyGUI extends JFrame {
                     // Xử lý lật trang theo menu
                     String cardName = "";
                     if (lbl == lblBanHang) {
-                        banHangPanel.xuLyResetData();
+                        banHangPanel.loadData();
                         cardName = "1";
                     } else if (lbl == lblKhuyenMai) {
                         khuyenMaiPanel.loadData();
@@ -330,6 +330,7 @@ public class MainQuanLyGUI extends JFrame {
                     } else if (lbl == lblKhachHang) {
                         cardName = "6";
                     } else if (lbl == lblThongKe) {
+                        thongKePanel.hienThiThongKe();
                         cardName = "7";
                     } else {
                         xuLyDangXuat();

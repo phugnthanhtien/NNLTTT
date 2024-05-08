@@ -310,7 +310,7 @@ public class PnQuanLyThongKeGUI extends JPanel {
 
     private DecimalFormat dcf = new DecimalFormat("###,###");
 
-    private void hienThiThongKe() {
+    public void hienThiThongKe() {
         ThongKe thongKe = thongKeBUS.thongKe(Integer.parseInt(cmbNam.getSelectedItem() + ""));
         lblThongKeThucDon.setText(dcf.format(thongKe.getSoLuongSP()));
         lblThongKeKhachHang.setText(dcf.format(thongKe.getSoLuongKH()));

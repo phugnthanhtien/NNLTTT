@@ -591,12 +591,11 @@ public class PnQuanLyBanHangGUI extends JPanel {
         JPanel pnListHoaDon = new TransparentPanel();
         listHoaDon = new JList<>();
         listHoaDon.setFont(font);
-        listHoaDon.setPreferredSize(new Dimension(500, 450));
         loadDataListHoaDon();
         JScrollPane scrHoaDon = new JScrollPane(listHoaDon,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrHoaDon.setPreferredSize(listHoaDon.getPreferredSize());
+        scrHoaDon.setPreferredSize(new Dimension(500, 450));
         pnListHoaDon.add(scrHoaDon);
         pnBottom.add(pnListHoaDon);
 
@@ -625,6 +624,11 @@ public class PnQuanLyBanHangGUI extends JPanel {
         lblAnhSP.setIcon(getAnhSP(""));
 
         cmbNhanVienBan.setEnabled(false);
+    }
+
+    public void loadData() {
+        loadDataTableSanPhamBan();
+        loadDataListHoaDon();
     }
 
     private void addEventsBanHang() {
@@ -967,6 +971,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
     private void loadDataTableSanPhamBan() {
         dtmSanPhamBan.setRowCount(0);
         ArrayList<SanPham> dssp = null;
+        spBUS.resetData();
 
         if (cmbLoaiSPBanHang.getItemCount() > 0) {
             String loai = cmbLoaiSPBanHang.getSelectedItem() + "";
@@ -1195,6 +1200,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
     }
 
     private void loadDataListHoaDon() {
+        hoaDonBUS.resetData();
         ArrayList<HoaDon> dshd = hoaDonBUS.getListHoaDon();
         addDataListHoaDon(dshd);
     }

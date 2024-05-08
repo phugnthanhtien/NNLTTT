@@ -18,6 +18,10 @@ public class SanPhamBUS {
     public void docListSanPham() {
         listSanPham = spDAO.getListSanPham();
     }
+    
+    public void resetData() {
+        listSanPham = null;
+    }
 
     public ArrayList<SanPham> getListSanPham() {
         if (listSanPham == null) {
