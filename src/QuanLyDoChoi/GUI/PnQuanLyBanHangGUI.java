@@ -1272,7 +1272,7 @@ public class PnQuanLyBanHangGUI extends JPanel {
         }
     }
 
-    private void xuLyResetData() {
+    public void xuLyResetData() {
         loadDataComboboxLoaiBanSP();
         cmbLoaiSPBanHang.setSelectedIndex(0);
         loadDataComboboxNhanVienBan();

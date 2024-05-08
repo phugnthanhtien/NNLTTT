@@ -247,6 +247,10 @@ public class PnQuanLyKhuyenMaiGUI extends JPanel {
             }
         });
     }
+    
+    public void loadData() {
+        loadDataTblKhuyenMai();
+    }
 
     private void loadDataTblKhuyenMai() {
         dtmKhuyenMai.setRowCount(0);

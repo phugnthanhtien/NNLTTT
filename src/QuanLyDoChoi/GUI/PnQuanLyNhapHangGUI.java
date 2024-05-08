@@ -30,6 +30,10 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
     public PnQuanLyNhapHangGUI() {
         initComponents();
         customControls();
+        this.loadData();
+    }
+    
+    public void loadData() {
         loadDataCmbNhanVien();
         loadDataTableKho();
         loadDataTablePhieuNhap();
