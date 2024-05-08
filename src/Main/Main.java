@@ -1,7 +1,7 @@
 package Main;
 
-import QuanLyPizza.DAO.MyConnect;
-import QuanLyPizza.GUI.DangNhapGUI;
+import QuanLyDoChoi.DAO.MyConnect;
+import QuanLyDoChoi.GUI.DangNhapGUI;
 
 public class Main {
 
