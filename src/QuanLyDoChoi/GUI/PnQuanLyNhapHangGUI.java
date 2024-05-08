@@ -268,7 +268,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
         jPanel15.add(txtTimKiem);
         jPanel15.add(jPanel2);
 
-        btnTimKiem.setIcon(new javax.swing.ImageIcon("D:\\School\\HK2-2023\\lttt\\project\\Project_NNLTTT\\image\\Search-icon.png")); // NOI18N
+        btnTimKiem.setIcon(new javax.swing.ImageIcon("C:\\Personal\\University\\HK6\\NNLTTT\\Project_NNLTTT\\image\\Search-icon.png")); // NOI18N
         btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTimKiemActionPerformed(evt);
@@ -437,7 +437,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Kho hàng");
 
-        btnResetKho.setIcon(new javax.swing.ImageIcon("D:\\School\\HK2-2023\\lttt\\project\\Project_NNLTTT\\image\\Refresh-icon.png")); // NOI18N
+        btnResetKho.setIcon(new javax.swing.ImageIcon("C:\\Personal\\University\\HK6\\NNLTTT\\Project_NNLTTT\\image\\Refresh-icon.png")); // NOI18N
         btnResetKho.setPreferredSize(new java.awt.Dimension(40, 40));
         btnResetKho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -680,7 +680,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
                     .addContainerGap()))
         );
 
-        tabNhapHang.addTab("Nhập hàng", new javax.swing.ImageIcon("D:\\School\\HK2-2023\\lttt\\project\\Project_NNLTTT\\image\\import.png"), pnNhapHang); // NOI18N
+        tabNhapHang.addTab("Nhập hàng", new javax.swing.ImageIcon("C:\\Personal\\University\\HK6\\NNLTTT\\Project_NNLTTT\\image\\import.png"), pnNhapHang); // NOI18N
 
         pnCTPhieuNhap.setLayout(new java.awt.BorderLayout());
 
@@ -690,7 +690,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
         jLabel17.setText("Phiếu nhập");
         jPanel22.add(jLabel17);
 
-        btnResetTabXemLai.setIcon(new javax.swing.ImageIcon("D:\\School\\HK2-2023\\lttt\\project\\Project_NNLTTT\\image\\Refresh-icon.png")); // NOI18N
+        btnResetTabXemLai.setIcon(new javax.swing.ImageIcon("C:\\Personal\\University\\HK6\\NNLTTT\\Project_NNLTTT\\image\\Refresh-icon.png")); // NOI18N
         btnResetTabXemLai.setPreferredSize(new java.awt.Dimension(40, 40));
         btnResetTabXemLai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -966,7 +966,7 @@ public class PnQuanLyNhapHangGUI extends javax.swing.JPanel {
         );
 
         pnCTPhieuNhap.add(pnThongTinCT, java.awt.BorderLayout.CENTER);
-        tabNhapHang.addTab("Xem phiếu nhập", new javax.swing.ImageIcon("D:\\School\\HK2-2023\\lttt\\project\\Project_NNLTTT\\image\\import-note.png"), pnCTPhieuNhap);
+        tabNhapHang.addTab("Xem phiếu nhập", new javax.swing.ImageIcon("C:\\Personal\\University\\HK6\\NNLTTT\\Project_NNLTTT\\image\\import-note.png"), pnCTPhieuNhap);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

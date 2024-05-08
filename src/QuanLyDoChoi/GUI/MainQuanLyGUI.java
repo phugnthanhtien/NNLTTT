@@ -2,7 +2,7 @@ package QuanLyDoChoi.GUI;
 
 import QuanLyDoChoi.BUS.PhanQuyenBUS;
 import QuanLyDoChoi.DTO.PhanQuyen;
-
+import MyCustom.MyDialog;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -28,7 +28,7 @@ public class MainQuanLyGUI extends JFrame {
     }
 
     JLabel btnDoiMatKhau;
-    JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnKhuyenMai, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe;
+    JPanel pnTitle, pnMenuLeft, pnCard, pnBanHang, pnKhuyenMai, pnNhapHang, pnSanPham, pnNhanVien, pnKhachHang, pnThongKe, pnDangXuat;
     PnQuanLyBanHangGUI banHangPanel;
     PnQuanLyKhuyenMaiGUI khuyenMaiPanel;
     PnQuanLyNhapHangGUI nhapHangPanel;
@@ -37,7 +37,7 @@ public class MainQuanLyGUI extends JFrame {
     PnQuanLyKhachHangGUI khachHangPanel;
     PnQuanLyThongKeGUI thongKePanel;
 
-    JLabel btnClose, btnMinimize, lblBanHang, lblKhuyenMai, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe;
+    JLabel btnClose, btnMinimize, lblBanHang, lblKhuyenMai, lblNhapHang, lblSanPham, lblNhanVien, lblKhachHang, lblThongKe, lblDangXuat;
     final Color clLeftItem = new Color(63, 74, 89);
     final Color clLeftItemHover = new Color(72, 88, 107);
     final Color clLeftItemSelected = new Color(51, 202, 187);
@@ -104,6 +104,7 @@ public class MainQuanLyGUI extends JFrame {
         lblNhanVien = new JLabel(new ImageIcon("image/ManagerUI/lblNhanVien.png"));
         lblKhachHang = new JLabel(new ImageIcon("image/ManagerUI/lblKhachHang.png"));
         lblThongKe = new JLabel(new ImageIcon("image/ManagerUI/lblThongKe.png"));
+        lblDangXuat = new JLabel(new ImageIcon("image/ManagerUI/lblDangXuat.png"));
 
         listMenuLeft = new ArrayList<>();
         listMenuLeft.add(lblBanHang);
@@ -113,6 +114,7 @@ public class MainQuanLyGUI extends JFrame {
         listMenuLeft.add(lblKhachHang);
         listMenuLeft.add(lblNhapHang);
         listMenuLeft.add(lblThongKe);
+        listMenuLeft.add(lblDangXuat);
 
         for (JLabel lbl : listMenuLeft) {
             lbl.setVisible(false);
@@ -126,6 +128,7 @@ public class MainQuanLyGUI extends JFrame {
         lblBanHang.setBackground(clLeftItemSelected);
         lblBanHang.setVisible(true);
         lblKhuyenMai.setVisible(true);
+        lblDangXuat.setVisible(true);
 
         pnMain.add(pnMenuLeft, BorderLayout.WEST);
 
@@ -323,8 +326,10 @@ public class MainQuanLyGUI extends JFrame {
                         cardName = "5";
                     } else if (lbl == lblKhachHang) {
                         cardName = "6";
-                    } else {
+                    } else if (lbl == lblThongKe) {
                         cardName = "7";
+                    } else {
+                        xuLyDangXuat();
                     }
                     cardMenuLeftGroup.show(pnCard, cardName);
                 }
@@ -369,4 +374,12 @@ public class MainQuanLyGUI extends JFrame {
         System.exit(0);
     }
 
+    private void xuLyDangXuat() {
+        MyDialog dialog = new MyDialog("Bạn chắc chắn muốn đăng xuất?", MyDialog.OPTION_DIALOG);
+        if (dialog.getAction() == MyDialog.OK_OPTION) {
+            DangNhapGUI dangNhapGUI = new DangNhapGUI();
+            dangNhapGUI.showWindow();
+            dispose();
+        }
+    }
 }

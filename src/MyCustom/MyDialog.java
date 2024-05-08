@@ -14,6 +14,7 @@ public class MyDialog extends JDialog {
     public final static int SUCCESS_DIALOG = 2;
     public final static int INFO_DIALOG = 3;
     public final static int WARNING_DIALOG = 4;
+    public final static int OPTION_DIALOG = 5;
 
     public MyDialog(String content, int type) {
         Main.changLNF("Windows");
@@ -31,7 +32,8 @@ public class MyDialog extends JDialog {
     final ImageIcon iconSuccess = new ImageIcon("image/icons8_checkmark_70px.png");
     final ImageIcon iconInfo = new ImageIcon("image/icons8_info_70px.png");
     final ImageIcon iconWarning = new ImageIcon("image/icons8_warning_shield_70px.png");
-
+    final ImageIcon iconOption = new ImageIcon("image/question.png");
+    
     private void addControls() {
         Container con = getContentPane();
 
@@ -104,6 +106,12 @@ public class MyDialog extends JDialog {
             case WARNING_DIALOG:
                 backgroundHeader = new Color(255, 193, 7);
                 lblIcon.setIcon(iconWarning);
+                pnButton.add(btnCancel);
+                break;
+            case OPTION_DIALOG:
+                backgroundHeader = new Color(255, 193, 7);
+                lblIcon.setIcon(iconOption);
+                pnButton.add(btnOK);
                 pnButton.add(btnCancel);
                 break;
         }
@@ -196,4 +204,5 @@ public class MyDialog extends JDialog {
         this.setVisible(true);
         getRootPane().setDefaultButton(btnOK);
     }
+
 }
